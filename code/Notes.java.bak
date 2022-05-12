@@ -1,0 +1,28 @@
+P50
+2的N次方的计算
+递归方法:
+将2^n=2^(n/2)*2^(n/2)*2^(n%2)
+int temp=2^(n/2);
+int 2^n=temp*temp*2^(n%2);
+特殊情况：x=0,1,-1;
+单独考虑n=-2147483648的情况
+if(n==-2147483648){
+    if(x<1&&x>-1){
+	return Double.POSITIVE_INFINITY;
+    }
+    else
+	return 0;
+}
+迭代iterate：
+private double getPower(double x,int n){
+
+ double ans=1;
+while(n>0){
+	if ((n & 1) == 1) {
+	ans*=x;
+	}
+	x=x*x;
+	n=n>>1;
+	}
+	return ans;
+}
