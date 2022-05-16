@@ -1,0 +1,13 @@
+class  
+{/*
+问题分析：深度优先搜索，含有重复元素。不可以用DFS。每一个数组都可以作为开始。
+*/
+	public static void main(String[] args) 
+	{
+	
+	}
+	public List<List<Integer>> permuteUnique(int[] nums) {
+	
+	
+	}
+}
