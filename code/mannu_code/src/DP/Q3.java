@@ -15,14 +15,14 @@ class Solution{
 		能否跳到第j个点，当j+A[j]>A.length时，表示可以跳到
 		*/
         int n=A.length;
-        int i=0;
+        int i=1;
         boolean []dp=new boolean[n];
         dp[0]=true;
         while(i<n){
             int j=0;
             dp[i]=false;
             while(j<i){//can jump i
-                if(j+A[j]>=i){
+                if(dp[j]&&j+A[j]>=i){
                     dp[i]=true;
                     break;
                 }
@@ -33,6 +33,6 @@ class Solution{
             }
             i++;
         }
-        return false;
+        return dp[n-1];
     }
 }
