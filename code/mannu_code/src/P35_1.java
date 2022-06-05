@@ -1,0 +1,28 @@
+class P35_1 {
+	public int searchInsert(int[] nums, int target) {
+		int end=nums.length-1,start=0;
+       int mid=0;
+		while(start<=end){
+			 mid=(start+start)>>>1;
+			if(nums[mid]==target){
+				return mid;
+			}
+			else if(nums[mid]>target){
+				end=mid-1;
+			}
+			else{
+				start=mid+1;
+			}
+		
+		}
+     
+		if(nums[mid]<target){
+			return mid+1;
+			
+		}
+		else{
+			return mid;
+		}
+	
+	}
+}

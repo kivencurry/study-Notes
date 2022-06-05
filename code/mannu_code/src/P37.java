@@ -1,10 +1,6 @@
 import java.util.*;
 
 public class P37 {
-    public static void main(String[] args) {
-       char[][] board = {{'5','3','.','.','7','.','.','.','.'},{'6','.','.','1','9','5','.','.','.'},{'.','9','8','.','.','.','.','6','.'},{'8','.','.','.','6','.','.','.','3'},{'4','.','.','8','.','3','.','.','1'},{'7','.','.','.','2','.','.','.','6'},{'.','6','.','.','.','.','2','8','.'},{'.','.','.','4','1','9','.','.','5'},{'.','.','.','.','8','.','.','7','9'}};
-       new P37().solveSudoku(board);
-    }
     public void solveSudoku(char[][] board) {
         find_Solution(board);  
     }
@@ -16,7 +12,7 @@ public class P37 {
                     while(temp<='9'){
                         if(isValid(i,j,board,temp)){
                             board[i][j]=temp;   
-                            if(find_Solution(board)==true){
+                            if(find_Solution(board)==true){//带着当前添加的元素去继续回溯
                                 return true;
                             }
                             else{
@@ -45,7 +41,6 @@ public class P37 {
             if(board[i][col]==temp){
                 return false;
             }
-
         }
         //box
         int row_i=row/3*3;
