@@ -1,0 +1,25 @@
+   //分治
+//将经过左子树路径的和与经过右子树路径的和相加，即为最终结果。
+  public int sumNumbers(TreeNode root) {
+
+  	if(root==null) return 0;
+  	return sumNumbersHelper(root,0);
+
+  }
+  private int sumNumbersHelper(TreeNode root,int currSum){
+//the sum of pass through the node
+  	int sum=currSum*10+root.val;
+
+  	if(root.left==null&&root.right==null){
+  		return sum;
+  	}
+  	int ans=0;
+  	if(root.left!=null) ans+=sumNumbersHelper(root.left,sum);
+  	if(root.right!=null) ans+=sumNumbersHelper(root.right,sum);
+
+
+  	return ans;
+
+
+  }
+}

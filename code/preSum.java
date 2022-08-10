@@ -15,7 +15,6 @@ public class preSum {
 			int temp=sum-k;
 			n+=map.getOrDefault(temp,0);
 			map.put(sum,map.getOrDefault(map.get(sum),0)+1);
-
 		}
 		return n;
 	}
